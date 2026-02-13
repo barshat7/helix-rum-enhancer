@@ -1,0 +1,106 @@
+<html>
+
+<head>
+  <title>Test Runner</title>
+  <script>
+    // we load from localhost, and have the ability to
+    // change the scripts that are being served. Check the
+    // web-test-runner.config.js file for details
+    window.RUM_BASE = window.origin;
+    // we log what's being sent to the "server"
+    window.called = [];
+    // and navigator.sendBeacon has been replaced with
+    // a call to fakeSendBeacon
+    window.fakeSendBeacon = async function (url, payload) {
+      let data;
+      // if payload is a string, we assume it's a JSON string
+      if (typeof payload === 'string') {
+        data = JSON.parse(payload);
+        // console.log('fakeSendBeacon blob', data.checkpoint);
+      } else {
+        // it's a blob
+        const text = await payload.text();
+        data = JSON.parse(text);
+        // console.log('fakeSendBeacon blob', data.checkpoint);
+      }
+      console.log('fakeSendBeacon ', data.checkpoint);
+
+      if (data.checkpoint === 'viewblock' || data.checkpoint === 'error') {
+        window.called.push(data);
+      }
+    };
+  </script>
+  <script defer type="text/javascript" src="/.rum/@adobe/helix-rum-js@^2/dist/rum-standalone.js"></script>
+</head>
+
+<body>
+  <nav></nav>
+  <div id="text-container"></div>
+  <script type="module">
+    import { runTests } from '@web/test-runner-mocha';
+    import { setViewport } from '@web/test-runner-commands';
+    import { expect } from '@esm-bundle/chai';
+
+    runTests(async () => {
+
+      beforeEach(() => {
+        window.called = [];
+      });
+
+      describe('Test Form View created after the page is loaded', () => {
+        it('Can observe form that are created dynamically', async () => {
+          await setViewport({ width: 800, height: 600 });
+          const form = `<form id="dynamic-form">
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <input type="submit" value="Submit" />
+          </form>`
+          const formElement = document.createElement('div');
+          formElement.innerHTML = form;
+          document.body.appendChild(formElement);
+          await new Promise((resolve) => {
+            setTimeout(resolve, 2000);
+          });
+
+          const viewblockCalls = window.called.filter((c) => c.checkpoint === 'viewblock');
+          expect(viewblockCalls.length).to.equal(1);
+          const actual = new Set(viewblockCalls.map((c) => c.source));
+          const expected = new Set(['form#dynamic-form']);
+          expect(actual).to.deep.equal(expected);
+        });
+
+        it('should not throw error if non form element is added', async () => {
+          await setViewport({ width: 800, height: 600 });
+          const element = `<div>Hello</div>`
+          const parentElement = document.createElement('div');
+          parentElement.innerHTML = element;
+          document.body.appendChild(parentElement);
+          await new Promise((resolve) => {
+            setTimeout(resolve, 2000);
+          });
+
+          const errorCalls = window.called.filter((c) => c.checkpoint === 'error');
+          const viewblockCalls = window.called.filter((c) => c.checkpoint === 'viewblock');
+
+          expect(errorCalls.length).to.equal(0);
+          expect(viewblockCalls.length).to.equal(0, 'should not throw viewblock if non form element is added');
+        });
+
+        it('should not throw error if text is added', async () => {
+          await setViewport({ width: 800, height: 600 });
+          const textContainer = document.getElementById('text-container');
+          textContainer.textContent = 'Hello';
+          await new Promise((resolve) => {
+            setTimeout(resolve, 2000);
+          });
+
+          const errorCalls = window.called.filter((c) => c.checkpoint === 'error');
+          const viewblockCalls = window.called.filter((c) => c.checkpoint === 'viewblock');
+
+          expect(errorCalls.length).to.equal(0);
+          expect(viewblockCalls.length).to.equal(0);
+        });
+      });
+    });
+  </script>
+</body>

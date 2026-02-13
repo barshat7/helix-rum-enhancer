@@ -1,3 +1,164 @@
+## [2.45.1](https://github.com/adobe/helix-rum-enhancer/compare/v2.45.0...v2.45.1) (2026-02-09)
+
+
+### Bug Fixes
+
+* remove blackbar-only TrustArc detection ([#532](https://github.com/adobe/helix-rum-enhancer/issues/532)) ([7fe4efc](https://github.com/adobe/helix-rum-enhancer/commit/7fe4efc196afd189b6dca73ea7e9eb8307f5936f))
+
+# [2.45.0](https://github.com/adobe/helix-rum-enhancer/compare/v2.44.2...v2.45.0) (2026-01-21)
+
+
+### Features
+
+* track external redirect estimates ([aff3105](https://github.com/adobe/helix-rum-enhancer/commit/aff3105c3676da3c3a0bb8ab2479fb456147d064))
+* track external redirect estimates ([4015e9d](https://github.com/adobe/helix-rum-enhancer/commit/4015e9d0c626ff5b06f13bf1e62db45813446cf1))
+
+## [2.44.2](https://github.com/adobe/helix-rum-enhancer/compare/v2.44.1...v2.44.2) (2025-11-14)
+
+
+### Bug Fixes
+
+* focus loss error misfires in forms and SPA navgation ([60217de](https://github.com/adobe/helix-rum-enhancer/commit/60217dea75e714e8e4094dd2a0b48966135c9085))
+* focus loss error misfires in forms and SPA navgation ([5a47d3b](https://github.com/adobe/helix-rum-enhancer/commit/5a47d3b8bccc6229efd2318a0c80b2358907b604))
+* focus loss error misfires in forms and SPA navigation ([4eca02a](https://github.com/adobe/helix-rum-enhancer/commit/4eca02a6fc2be345394972eef2dde5ada44d0e8a))
+
+## [2.44.1](https://github.com/adobe/helix-rum-enhancer/compare/v2.44.0...v2.44.1) (2025-10-27)
+
+
+### Bug Fixes
+
+* ensuring no errors are thrown if text element is added in the dom ([#506](https://github.com/adobe/helix-rum-enhancer/issues/506)) ([4d9756c](https://github.com/adobe/helix-rum-enhancer/commit/4d9756c02eb4d0831c30563bd43a8ee428927f76))
+
+# [2.44.0](https://github.com/adobe/helix-rum-enhancer/compare/v2.43.0...v2.44.0) (2025-10-23)
+
+
+### Features
+
+* track js and html resources from external domains ([#503](https://github.com/adobe/helix-rum-enhancer/issues/503)) ([ff512bb](https://github.com/adobe/helix-rum-enhancer/commit/ff512bbb04fc51b442359301480073d9264d57a6))
+
+# [2.43.0](https://github.com/adobe/helix-rum-enhancer/compare/v2.42.4...v2.43.0) (2025-10-22)
+
+
+### Features
+
+* adding tracking of dynamic forms in the page ([#483](https://github.com/adobe/helix-rum-enhancer/issues/483)) ([c2d5495](https://github.com/adobe/helix-rum-enhancer/commit/c2d5495736f2693d31126bddbcce4c66c6fd40f4))
+
+## [2.42.4](https://github.com/adobe/helix-rum-enhancer/compare/v2.42.3...v2.42.4) (2025-10-17)
+
+
+### Bug Fixes
+
+* trigger release to test npm trusted publisher configuration ([e11606d](https://github.com/adobe/helix-rum-enhancer/commit/e11606d4a5e81b24c20277feff5ab363b557ec96))
+
+## [2.42.3](https://github.com/adobe/helix-rum-enhancer/compare/v2.42.2...v2.42.3) (2025-10-17)
+
+
+### Bug Fixes
+
+* upgrade to @semantic-release/npm v13 for OIDC support ([b780819](https://github.com/adobe/helix-rum-enhancer/commit/b78081961841d038ca24aadf53ffe4dbb856404c))
+
+## [2.42.2](https://github.com/adobe/helix-rum-enhancer/compare/v2.42.1...v2.42.2) (2025-10-17)
+
+
+### Bug Fixes
+
+* configure npm provenance for OIDC publishing with 2FA ([e01fa6a](https://github.com/adobe/helix-rum-enhancer/commit/e01fa6a920f93048053a509ce54a05eb7dd92666))
+* configure npm provenance for OIDC publishing with 2FA ([033eba5](https://github.com/adobe/helix-rum-enhancer/commit/033eba56bef2184d7bf1a09a44f72c4464dc8b98))
+
+## [2.42.1](https://github.com/adobe/helix-rum-enhancer/compare/v2.42.0...v2.42.1) (2025-10-16)
+
+
+### Bug Fixes
+
+* update semantic-release to v25 and node to 24.x for OIDC ([5629fdd](https://github.com/adobe/helix-rum-enhancer/commit/5629fdd8b7b88b4f2655a4ce0d00477e369581c2))
+
+# [2.42.0](https://github.com/adobe/helix-rum-enhancer/compare/v2.41.0...v2.42.0) (2025-10-09)
+
+
+### Features
+
+* Add form validation error tracking to form plugin ([4a8f89e](https://github.com/adobe/helix-rum-enhancer/commit/4a8f89e33976147e941a0f4288cc7deafff47182))
+
+# [2.41.0](https://github.com/adobe/helix-rum-enhancer/compare/v2.40.2...v2.41.0) (2025-10-07)
+
+
+### Features
+
+* tracking language/redirect checkpoint for all customers ([#484](https://github.com/adobe/helix-rum-enhancer/issues/484)) ([1577df7](https://github.com/adobe/helix-rum-enhancer/commit/1577df7e04da7c075f4d77464bbeb4544e45c2a8))
+
+## [2.40.2](https://github.com/adobe/helix-rum-enhancer/compare/v2.40.1...v2.40.2) (2025-09-01)
+
+
+### Bug Fixes
+
+* update URL parameter handling in trackCheckpoint function to ensure correct formatting if no URL parameters are required ([c34dfeb](https://github.com/adobe/helix-rum-enhancer/commit/c34dfeb83891c079d2b56b58f85f2be4948eaf60))
+
+## [2.40.1](https://github.com/adobe/helix-rum-enhancer/compare/v2.40.0...v2.40.1) (2025-07-29)
+
+
+### Bug Fixes
+
+* initialization logic ([a9df224](https://github.com/adobe/helix-rum-enhancer/commit/a9df2242fa0e970f8f730fbf39a985b2bad72937))
+* initialization logic ([2135ec5](https://github.com/adobe/helix-rum-enhancer/commit/2135ec5bde9e7a2ec244113e5731977a957b01cb))
+
+# [2.40.0](https://github.com/adobe/helix-rum-enhancer/compare/v2.39.0...v2.40.0) (2025-07-29)
+
+
+### Features
+
+* escape invalid/special characters from source selector ([#438](https://github.com/adobe/helix-rum-enhancer/issues/438)) ([#452](https://github.com/adobe/helix-rum-enhancer/issues/452)) ([6918ffa](https://github.com/adobe/helix-rum-enhancer/commit/6918ffaffd22d9c444a85815bc26bc8ebf655900))
+
+# [2.39.0](https://github.com/adobe/helix-rum-enhancer/compare/v2.38.0...v2.39.0) (2025-07-28)
+
+
+### Features
+
+* **a11y:** introduce granular a11y level detection ([0f7a4ba](https://github.com/adobe/helix-rum-enhancer/commit/0f7a4bae5148fdb99c46ab122b630ca9ec06ce01))
+* **a11y:** introduce granular a11y level detection ([e8dfcca](https://github.com/adobe/helix-rum-enhancer/commit/e8dfcca547990eb985d1705db2f5752689858db1))
+* **a11y:** introduce granular a11y level detection ([39dc433](https://github.com/adobe/helix-rum-enhancer/commit/39dc433f74a3d9f6b1a241b6770e2759ce2313de))
+
+# [2.38.0](https://github.com/adobe/helix-rum-enhancer/compare/v2.37.1...v2.38.0) (2025-07-23)
+
+
+### Features
+
+* enable allresources flag for hash 543 and add dropins path patterns ([74a393c](https://github.com/adobe/helix-rum-enhancer/commit/74a393c075978f6e7107f003933eccbb228928a2))
+
+## [2.37.1](https://github.com/adobe/helix-rum-enhancer/compare/v2.37.0...v2.37.1) (2025-07-14)
+
+
+### Bug Fixes
+
+* **a11y:** audience is flagged as using accessibility too often ([4449970](https://github.com/adobe/helix-rum-enhancer/commit/444997021c49b45d9162a4a09035e6b75c0360fc))
+* **a11y:** audience is flagged as using accessibility too often ([03e9f1b](https://github.com/adobe/helix-rum-enhancer/commit/03e9f1b185574649741ca4e3a50ecce13165819d))
+
+# [2.37.0](https://github.com/adobe/helix-rum-enhancer/compare/v2.36.5...v2.37.0) (2025-07-08)
+
+
+### Bug Fixes
+
+* audience reporting ([9f02657](https://github.com/adobe/helix-rum-enhancer/commit/9f0265703aba8ce01fa2850dadc36f993e9e2496))
+
+
+### Features
+
+* **a11y:** add a new accessibility plugin to categorize audience and detect common bugs ([033b425](https://github.com/adobe/helix-rum-enhancer/commit/033b4250ddfd3a3a8887b6fbebd18b92543c70a5))
+* **a11y:** add a new accessibility plugin to flag accessible audience and detect common bugs ([5a39aff](https://github.com/adobe/helix-rum-enhancer/commit/5a39aff315213187ce2b35928f72ad44fcd0e869))
+
+## [2.36.5](https://github.com/adobe/helix-rum-enhancer/compare/v2.36.4...v2.36.5) (2025-06-20)
+
+
+### Bug Fixes
+
+* **release:** Add webcomponent.js to release tagging ([0953552](https://github.com/adobe/helix-rum-enhancer/commit/0953552f424fba66f1e26b2bd32bebeff86015fe))
+
+## [2.36.4](https://github.com/adobe/helix-rum-enhancer/compare/v2.36.3...v2.36.4) (2025-06-18)
+
+
+### Bug Fixes
+
+* check for OneTrust PC sdk if banner is not present ([#437](https://github.com/adobe/helix-rum-enhancer/issues/437)) ([6a63f79](https://github.com/adobe/helix-rum-enhancer/commit/6a63f79b10f2a983a8748bd9ffb14cafee16d3d7))
+
 ## [2.36.3](https://github.com/adobe/helix-rum-enhancer/compare/v2.36.2...v2.36.3) (2025-06-16)
 
 

@@ -66,7 +66,6 @@
           await new Promise((resolve) => {
             setTimeout(resolve, 2000);
           });
-          console.log('testing');
           expect(window.called.length).to.equal(3);
           const actual = new Set(window.called.map((c) => c.source));
           const expected = new Set(['nav form#form-in-header', 'form#basic-form', 'footer form#form-in-footer']);
